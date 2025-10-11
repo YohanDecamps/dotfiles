@@ -12,7 +12,15 @@ return {
       require "configs.lspconfig"
     end,
   },
-
+  {
+    "nvim-tree/nvim-tree.lua",
+    opts = function(_, opts)
+      opts.view = opts.view or {}
+      opts.view.adaptive_size = true
+      opts.view.width = { min = 25, max = 80 }
+      return opts
+    end,
+  },
   -- test new blink
   -- { import = "nvchad.blink.lazyspec" },
 
