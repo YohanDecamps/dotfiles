@@ -9,7 +9,7 @@ map("i", "jk", "<ESC>")
 
 map("n", "<leader>tt", "o<Esc>o")
 
-map("n", "<leader>pi", function()
+map("n", "<leader>pp", function()
   -- First check if clipboard has image data
   local check = vim.fn.system('wl-paste --list-types 2>/dev/null | grep -q "image/png"')
   local exit_code = vim.v.shell_error
