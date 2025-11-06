@@ -21,6 +21,13 @@ return {
       return opts
     end,
   },
+  {
+    "nvim-telescope/telescope.nvim",
+    opts = function()
+      return require "configs.telescope"
+    end,
+  }
+
   -- test new blink
   -- { import = "nvchad.blink.lazyspec" },
 
