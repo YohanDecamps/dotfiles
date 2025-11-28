@@ -42,3 +42,55 @@ map("n", "<leader>pp", function()
     vim.api.nvim_err_writeln('Error: No image data in clipboard')
   end
 end, { desc = "Paste image from clipboard" })
+
+local function find_live_terminal()
+  for _, bufnr in ipairs(vim.api.nvim_list_bufs()) do
+    if vim.api.nvim_buf_is_valid(bufnr)
+      and vim.api.nvim_buf_get_option(bufnr, "buftype") == "terminal"
+    then
+      local chan = vim.b[bufnr].terminal_job_id
+      if chan and vim.fn.jobwait({ chan }, 0)[1] == -1 then
+        return bufnr, chan
+      end
+    end
+  end
+  return nil, nil
+end
+
+local function get_project_root()
+  return vim.loop.cwd()
+end
+
+local function write_and_launch()
+  vim.cmd("wa")
+
+  local root = get_project_root()
+  local script = root .. "/launch.sh"
+
+  local term_buf, chan = find_live_terminal()
+
+  if term_buf and chan then
+    -- Reuse the terminal
+    vim.fn.chansend(chan, script .. "\n")
+
+    -- Focus the terminal window
+    -- If the terminal buffer is not in any window, open it
+    local win = vim.fn.bufwinnr(term_buf)
+    if win == -1 then
+      vim.cmd("botright split")
+      vim.cmd("buffer " .. term_buf)
+    else
+      vim.cmd(win .. "wincmd w")
+    end
+
+  else
+    -- Create a new terminal and run script
+    vim.cmd("botright split")
+    vim.cmd("terminal " .. script)
+
+    -- Focus is already on the new terminal window
+  end
+end
+
+map("n", "<leader>rr", write_and_launch, { desc = "Write all and run launch script" })
+
