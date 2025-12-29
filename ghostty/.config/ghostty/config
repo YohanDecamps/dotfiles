@@ -1,0 +1,4 @@
+theme = Gruvbox Material Dark
+background-opacity = 0.90
+window-padding-x = 10
+window-padding-y = 10
