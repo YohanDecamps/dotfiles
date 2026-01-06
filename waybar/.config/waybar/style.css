@@ -1,0 +1,104 @@
+/* ───────── Global ───────── */
+* {
+  border: none;
+  font-family: "JetbrainsMono Nerd Font";
+  font-size: 15px;
+  color: #282828;
+}
+
+window#waybar {
+  background: transparent;
+  margin: 6px 0;
+}
+
+/* ───────── TOP section (stacked as one block) ───────── */
+
+#custom-artixicon,
+#clock {
+  background: #7CA69A;
+  padding: 10px 0;
+}
+
+#clock {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding-bottom: 12px;
+}
+
+/* Rounded only at section edges */
+#custom-artixicon {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background: #282828;
+  padding: 12px 12px;
+  color: #8AB09F;
+}
+
+#memory,
+#cpu,
+#temperature,
+#disk {
+  padding: 10px 0;
+}
+
+#memory {
+  background: #A4AD60;
+  padding-top: 12px;
+  margin-top: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+#cpu {
+  background: #CE9E53;
+}
+
+#temperature {
+  background: #E0695D;
+}
+
+#disk {
+  background: #D7909D;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding-bottom: 12px;
+}
+
+/* ───────── MIDDLE section ───────── */
+
+#taskbar {
+  background: transparent;
+  border-radius: 10px;
+}
+
+#taskbar button {
+  border-radius: 10px;
+  padding: 6px 6px;
+  transition: background 0.3s ease;
+}
+
+#taskbar button.active {
+  background: rgba(28, 28, 28, 0.5);
+}
+
+#taskbar button:hover {
+  background: rgba(28, 28, 28, 0.5);
+}
+
+/* ───────── BOTTOM section (stacked) ───────── */
+
+#pulseaudio,
+#language {
+  background: #95BA88;
+  padding: 12px 0;
+}
+
+#pulseaudio {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+#language {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}

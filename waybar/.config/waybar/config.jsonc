@@ -1,0 +1,96 @@
+{
+  "layer": "top",
+  "position": "left",
+  "output": "DP-1",
+  "exclusive": true,
+  "passthrough": false,
+  "width": 20,
+  "margin": "20 0 20 20",
+
+  /* === Modules Order === */
+  "modules-left": [
+    "custom/artixicon",
+    "clock",
+    "memory",
+    "cpu",
+    "temperature",
+    "disk"
+  ],
+
+  "modules-center": [
+    "wlr/taskbar"
+  ],
+
+  "modules-right": [
+    "pulseaudio",
+    "hyprland/language"
+  ],
+
+  /* === Modules === */
+
+  "custom/artixicon": {
+    "format": "",
+    "tooltip-format": "Rofi App Launcher",
+    "on-click": "rofi -show drun -terminal ghostty -kb-cancel Escape -theme ~/.local/share/rofi/themes/modern/style.rasi"
+  },
+
+  "memory": {
+    "format": "{}% 󰍛",
+    "rotate": 90,
+    "tooltip": true
+  },
+
+  "cpu": {
+    "format": "{usage}% ",
+    "rotate": 90,
+    "tooltip": true
+  },
+
+  "temperature": {
+    "format": "{temperatureC}°C {icon}",
+    "rotate": 90,
+    "tooltip": true,
+    "format-icons": [
+      ""
+    ]
+  },
+
+  "disk": {
+    "format": "{percentage_free}% ",
+    "rotate": 90,
+    "tooltip": true
+  },
+
+  "clock": {
+    "format": "{:%H\n%M}",
+    "tooltip-format": "{:%Y-%m-%d}"
+  },
+
+  "wlr/taskbar": {
+    "format": "{icon}",
+    "all-outputs": true,
+    "tooltip-format": "{name}",
+    "on-click": "activate",
+    "on-click-middle": "close",
+    "icon-size": 32,
+    "ignore-list": [
+      "rofi"
+    ]
+  },
+
+  "pulseaudio": {
+    "format": "{volume}% ",
+    "format-muted": " MUTE",
+    "rotate": 90,
+    "on-click": "",
+    "tooltip": false
+  },
+
+  "hyprland/language": {
+    "format": "{} ",
+    "rotate": 90,
+    "on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next",
+    "format-fr": "FR",
+    "format-en": "ENG"
+  }
+}
