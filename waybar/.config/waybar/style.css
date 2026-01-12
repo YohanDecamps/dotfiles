@@ -2,7 +2,7 @@
 * {
   border: none;
   font-family: "JetbrainsMono Nerd Font";
-  font-size: 15px;
+  font-size: 12px;
   color: #282828;
 }
 
@@ -16,21 +16,22 @@ window#waybar {
 #custom-artixicon,
 #clock {
   background: #7CA69A;
-  padding: 10px 0;
 }
 
 #clock {
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+  padding: 10px 0;
   padding-bottom: 12px;
 }
 
 /* Rounded only at section edges */
 #custom-artixicon {
+  font-size: 24px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   background: #282828;
-  padding: 12px 12px;
+  padding: 0px 0px;
   color: #8AB09F;
 }
 
@@ -42,9 +43,8 @@ window#waybar {
 }
 
 #memory {
+  margin-top: 12px;
   background: #A4AD60;
-  padding-top: 12px;
-  margin-top: 10px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
@@ -59,9 +59,9 @@ window#waybar {
 
 #disk {
   background: #D7909D;
+  padding-top: 15px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  padding-bottom: 12px;
 }
 
 /* ───────── MIDDLE section ───────── */
@@ -88,14 +88,20 @@ window#waybar {
 /* ───────── BOTTOM section (stacked) ───────── */
 
 #pulseaudio,
+#battery,
 #language {
   background: #95BA88;
-  padding: 12px 0;
+  padding: 10px 0;
+}
+
+#battery {
+  margin-top: 12px;
+  padding-top: 18px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 #pulseaudio {
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
 }
 
 #language {

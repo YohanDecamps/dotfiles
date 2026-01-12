@@ -1,10 +1,10 @@
 {
   "layer": "top",
   "position": "left",
-  "output": "DP-1",
+  "output": "eDP-1",
   "exclusive": true,
   "passthrough": false,
-  "width": 20,
+  "width": 36,
   "margin": "20 0 20 20",
 
   /* === Modules Order === */
@@ -22,6 +22,7 @@
   ],
 
   "modules-right": [
+    "battery",
     "pulseaudio",
     "hyprland/language"
   ],
@@ -29,7 +30,7 @@
   /* === Modules === */
 
   "custom/artixicon": {
-    "format": "",
+    "format": "",
     "tooltip-format": "Rofi App Launcher",
     "on-click": "rofi -show drun -terminal ghostty -kb-cancel Escape -theme ~/.local/share/rofi/themes/modern/style.rasi"
   },
@@ -72,10 +73,20 @@
     "tooltip-format": "{name}",
     "on-click": "activate",
     "on-click-middle": "close",
-    "icon-size": 32,
+    "icon-size": 24,
     "ignore-list": [
       "rofi"
     ]
+  },
+
+  "battery": {
+    "bat": "BAT0",
+    "format": "{capacity}% {icon}",
+    "format-icons": ["", "", "", "", ""],
+    "format-charging": "{capacity}%  ",
+    "rotate": 90,
+    "tooltip-format": "Battery: {capacity}%\nTime left: {time}",
+    "tooltip-format-charging": "Battery: {capacity}%\nTime to full: {time}"
   },
 
   "pulseaudio": {
