@@ -22,7 +22,7 @@ map("n", "<leader>pp", function()
     end
     
     -- Create directory if it doesn't exist
-    local dir = current_file
+    local dir = '.' .. current_file
     vim.fn.mkdir(dir, 'p')
     
     local filename = vim.fn.input('Filename: ')

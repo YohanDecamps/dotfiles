@@ -1,6 +1,8 @@
 vim.g.base46_cache = vim.fn.stdpath "data" .. "/base46/"
 vim.g.mapleader = " "
 
+vim.env.ROSLYN_MAX_EVENTS = "500"
+
 vim.g.clipboard = {
   name = 'wl-clipboard',
   copy = {

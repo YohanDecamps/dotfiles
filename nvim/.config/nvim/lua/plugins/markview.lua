@@ -8,7 +8,7 @@ return {
         require("markview").setup({
             -- Your configuration options go here
             markdown = {
-              headings = presets.arrowed
+              headings = presets.default
             }
         })
     end,
