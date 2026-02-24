@@ -23,6 +23,7 @@ if status is-interactive
     set -x WLR_NO_HARDWARE_CURSORS 1
     set -x __NV_PRIME_RENDER_OFFLOAD 1
     set -x __GLX_VENDOR_LIBRARY_NAME nvidia
+    set -x MANPAGER "nvim +Man!"
 
     # Add rust binaries to PATH
     set -x PATH $HOME/.cargo/bin $PATH
