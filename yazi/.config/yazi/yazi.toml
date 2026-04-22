@@ -1,2 +1,8 @@
 [mgr]
 show_hidden = true
+edit = [
+	{ run = "nvim %s", block = true, for = "unix" },
+]
+open = [
+	{ run = "nvim %s", desc = "Open" },
+]
