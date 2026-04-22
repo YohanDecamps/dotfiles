@@ -35,32 +35,58 @@ return {
                 }
             }
 
+            
             -- glsl_analyzer configuration
-            local glsl_config = {
+            -- local glsl_config = {
+            --     on_attach = defaults.on_attach,
+            --     capabilities = defaults.capabilities,
+            -- }
+
+            -- github copilot configuration
+
+            local copilot_config = {
                 on_attach = defaults.on_attach,
                 capabilities = defaults.capabilities,
-                filetypes = {"glsl", "vert", "frag", "geom", "tesc", "tese"},
+            }
+
+            local omnisharp_config = {
+                on_attach = defaults.on_attach,
+                capabilities = defaults.capabilities,
+                cmd = { "dotnet", vim.fn.stdpath("data") .. "/mason/packages/omnisharp/libexec/OmniSharp.dll" },
             }
 
             -- Setup LSPs depending on Neovim version
             if vim.lsp and vim.lsp.start then
                 vim.lsp.config("clangd", clangd_config)
                 vim.lsp.enable("clangd")
-                
+
                 vim.lsp.config("ts_ls", ts_config)
                 vim.lsp.enable("ts_ls")
 
                 vim.lsp.config("rust_analyzer", rust_config)
                 vim.lsp.enable("rust_analyzer")
-        
-                vim.lsp.config("glsl_analyzer", glsl_config)
-                vim.lsp.enable("glsl_analyzer")
+
+                -- vim.lsp.config("glsl_analyzer", glsl_config)
+                -- vim.lsp.enable("glsl_analyzer")
+
+                vim.api.nvim_create_autocmd("FileType", {
+                    pattern = { "cs", "vb" },
+                    callback = function()
+                        vim.lsp.start({
+                            name = "omnisharp",
+                            on_attach = defaults.on_attach,
+                            capabilities = defaults.capabilities,
+                            cmd = { "dotnet", vim.fn.stdpath("data") .. "/mason/packages/omnisharp/libexec/OmniSharp.dll" },
+                        })
+                    end,
+                })
             else
                 local lspconfig = require("lspconfig")
                 lspconfig.clangd.setup(clangd_config)
                 lspconfig.ts_ls.setup(ts_config)
                 lspconfig.rust_analyzer.setup(rust_config)
-                lspconfig.glsl_analyzer.setup(glsl_config)
+                -- lspconfig.glsl_analyzer.setup(glsl_config)
+                lspconfig.omnisharp.setup(omnisharp_config)
 
             end
         end
