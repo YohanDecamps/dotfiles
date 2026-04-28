@@ -139,6 +139,8 @@ text/x-vcard=nvim.desktop
 application/vnd.openxmlformats-officedocument.wordprocessingml.document=libreoffice-writer.desktop
 application/vnd.openxmlformats-officedocument.presentationml.presentation=libreoffice-impress.desktop
 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet=libreoffice-calc.desktop
+application/pdf=zen.desktop
+application/x-pdf=zen.desktop
 
 audio/wav=mpv.desktop
 audio/x-wav=mpv.desktop
