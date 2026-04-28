@@ -57,7 +57,8 @@
   },
 
   "disk": {
-    "format": "{percentage_free}% ",
+    "format": "{specific_free:0.0f} GB ",
+    "unit": "GB",
     "rotate": 90,
     "tooltip": true
   },
