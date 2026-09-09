@@ -34,6 +34,7 @@ if status is-interactive
     alias vim="nvim"
     alias lg="lazygit"
     alias ymp4="yt-dlp -f \"bv*[ext=mp4]+ba[ext=m4a]/b[ext=mp4]\""
+    alias ymp3="yt-dlp -x --audio-format mp3 --audio-quality 0"
 
     # Functions
 
