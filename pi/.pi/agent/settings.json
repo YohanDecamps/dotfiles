@@ -1,0 +1,10 @@
+{
+  "lastChangelogVersion": "0.85.1",
+  "theme": "dark",
+  "defaultProvider": "openrouter",
+  "defaultModel": "deepseek/deepseek-v4-flash-0731",
+  "packages": [
+    "npm:pi-vim",
+    "npm:pi-mcp-adapter"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "mcpServers": {
+    "kagi": {
+      "command": "uvx",
+      "args": ["kagimcp"],
+      "env": {
+        "KAGI_API_KEY": "xgXZ4471kuGbEBQ9BhGg-Khm6vDjRbW1PU3_fzCh--c.y3Zn4ZNyLuBXvhddCbNxRilRkxNQzVg1-cC_IKEomVs"
+      }
+    },
+    "context7": {
+      "url": "https://mcp.context7.com/mcp",
+      "headers": {
+        "Authorization": "Bearer ctx7sk-51ca7020-567b-434a-a6d1-4b6d334b530a"
+      }
+    }
+  }
+}
