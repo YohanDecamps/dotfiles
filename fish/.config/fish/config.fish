@@ -74,6 +74,8 @@ if status is-interactive
     # keybindings
     bind -M insert alt-f 'y'
     bind alt-f 'y'
+    bind -M insert alt-g 'lg'
+    bind alt-g 'lg'
 
     # Make fish visual mode copy to clipboard instead of primary
     bind -M visual y 'fish_clipboard_copy; commandline -f end-selection'
