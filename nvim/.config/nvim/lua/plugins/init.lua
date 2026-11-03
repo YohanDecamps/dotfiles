@@ -29,22 +29,27 @@ return {
   },
   {
     "nvim-treesitter/nvim-treesitter",
-    opts = {
-        ensure_installed = {
-            "c_sharp",
-            "lua",
-            "vim",
-            "vimdoc",
-            "html",
-            "css",
-            "javascript",
-            "typescript",
-            "c",
-            "cpp",
-            "rust",
-            "glsl",
-        },
-    },
+    build = ":TSUpdate",
+    config = function()
+      -- nvim-treesitter `main` branch: `ensure_installed` no longer exists.
+      -- Parsers must be installed with the new `install()` API.
+      require("nvim-treesitter").install {
+        "c_sharp",
+        "lua",
+        "vim",
+        "vimdoc",
+        "html",
+        "css",
+        "javascript",
+        "typescript",
+        "c",
+        "cpp",
+        "rust",
+        "glsl",
+        "svelte", -- needs html/css/javascript/typescript for injections
+        "prisma", -- needs javascript/typescript for injections
+      }
+    end,
     init = function()
         vim.opt.tabstop = 2
         vim.opt.shiftwidth = 2
