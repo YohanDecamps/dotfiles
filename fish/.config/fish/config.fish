@@ -38,6 +38,14 @@ if status is-interactive
 
     # Functions
 
+    # Load environment
+
+    function loadenv
+      for line in (string sub --left=2 "$argv" | grep -v '^#' | grep '=')
+        set -gx (string sub -n 1 -m 1 -- $line | string replace '=') (string sub -- (string index '=' $line | math +1) -- $line)
+      end
+    end
+
     # Spleeter
     function spleeter
         set filename $argv[1]
