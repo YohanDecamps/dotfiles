@@ -41,10 +41,13 @@ if status is-interactive
     # Load environment
 
     function loadenv
-      for line in (string sub --left=2 "$argv" | grep -v '^#' | grep '=')
-        set -gx (string sub -n 1 -m 1 -- $line | string replace '=') (string sub -- (string index '=' $line | math +1) -- $line)
+      for line in (cat "$argv" | grep -v '^#' | grep '=')
+        set -l kv (string split -m1 '=' "$line")
+        set -gx $kv[1] (string trim -c '"' -- $kv[2])
       end
     end
+     
+    loadenv ~/.config/fish/.env
 
     # Spleeter
     function spleeter
