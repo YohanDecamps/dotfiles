@@ -1,10 +1,17 @@
 {
-  "lastChangelogVersion": "0.85.1",
+  "lastChangelogVersion": "1.1.0",
   "theme": "dark",
   "defaultProvider": "openrouter",
-  "defaultModel": "deepseek/deepseek-v4-flash-0731",
+  "defaultModel": "deepseek/deepseek-v4.1-flash",
   "packages": [
     "npm:pi-vim",
+    "npm:pi-subagents",
+    "npm:pi-rtk-optimizer",
+    "npm:@dietrichgebert/ponytail",
     "npm:pi-mcp-adapter"
-  ]
+  ],
+  "extensions": [
+    "-builtin:mcp"
+  ],
+  "hideThinkingBlock": false
 }

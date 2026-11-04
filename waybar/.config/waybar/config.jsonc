@@ -1,7 +1,7 @@
 {
   "layer": "top",
   "position": "left",
-  "output": "eDP-1",
+  "output": "DP-3",
   "exclusive": true,
   "passthrough": false,
   "width": 36,

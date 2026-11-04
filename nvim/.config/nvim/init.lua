@@ -5,6 +5,7 @@ vim.opt.shiftwidth = 4
 vim.opt.number = true
 vim.opt.softtabstop = 4
 vim.opt.completeopt = { "menuone", "noinsert", "popup" }
+vim.opt.clipboard = "unnamedplus"
 
 local undo_dir = vim.fn.stdpath("state") .. "/undo"
 vim.fn.mkdir(undo_dir, "p")
