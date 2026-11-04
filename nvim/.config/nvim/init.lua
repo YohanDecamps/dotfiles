@@ -1,3 +1,4 @@
+vim.opt.termguicolors = true
 vim.opt.expandtab = true
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
@@ -13,7 +14,13 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "svelte",
+  callback = function(args)
+    vim.treesitter.start(args.buf)
+  end,
+})
+
 require("config.lazy")
 require("config.keymaps")
 require("config.lsp")
-vim.opt.termguicolors = true
