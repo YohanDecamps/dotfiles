@@ -59,6 +59,16 @@ vim.lsp.config('tailwindcss', {
 })
 vim.lsp.enable('tailwindcss')
 
+-- lua-language-server (the nvim-lspconfig server name is `lua_ls`)
+vim.lsp.config('lua_ls', {
+  settings = {
+    Lua = {
+      diagnostics = { globals = { 'vim' } },
+    },
+  },
+})
+vim.lsp.enable('lua_ls')
+
 -- Show diagnostics in a floating window
 vim.diagnostic.config {
   virtual_text = false,
@@ -78,6 +88,18 @@ vim.api.nvim_create_autocmd('LspAttach', {
   callback = function(args)
     local bufnr = args.buf
     local opts = { buffer = bufnr }
+    local client = vim.lsp.get_client_by_id(args.data.client_id)
+
+    if client and client:supports_method('textDocument/completion', bufnr) then
+      vim.lsp.completion.enable(true, client.id, bufnr, { autotrigger = true })
+      vim.keymap.set('i', '<C-Space>', vim.lsp.completion.get, opts)
+      vim.keymap.set('i', '<Tab>', function()
+        return vim.fn.pumvisible() == 1 and '<C-n>' or '<Tab>'
+      end, { buffer = bufnr, expr = true, noremap = true })
+      vim.keymap.set('i', '<S-Tab>', function()
+        return vim.fn.pumvisible() == 1 and '<C-p>' or '<S-Tab>'
+      end, { buffer = bufnr, expr = true, noremap = true })
+    end
 
     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
     vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
