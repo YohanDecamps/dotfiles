@@ -1,5 +1,3 @@
--- /home/gaia/dotfiles/nvim/.config/nvim/lua/config/lsp.lua
-
 -- ts_ls
 vim.lsp.config('ts_ls', {
   settings = {
@@ -61,7 +59,7 @@ vim.lsp.config('tailwindcss', {
 })
 vim.lsp.enable('tailwindcss')
 
--- Show diagnostics in a floating window instead of inline virtual text
+-- Show diagnostics in a floating window
 vim.diagnostic.config {
   virtual_text = false,
   signs = true,
@@ -75,7 +73,6 @@ vim.diagnostic.config {
     style = "minimal",
   },
 }
-
 
 vim.api.nvim_create_autocmd('LspAttach', {
   callback = function(args)
