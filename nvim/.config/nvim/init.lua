@@ -3,6 +3,12 @@ vim.opt.expandtab = true
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.softtabstop = 4
+vim.opt.completeopt = { "menuone", "noinsert", "popup" }
+
+local undo_dir = vim.fn.stdpath("state") .. "/undo"
+vim.fn.mkdir(undo_dir, "p")
+vim.opt.undofile = true
+vim.opt.undodir = undo_dir .. "//"
 
 vim.api.nvim_create_autocmd("FileType", {
   pattern = { "lua", "typescript", "typescriptreact" },
