@@ -76,6 +76,10 @@ if status is-interactive
     bind alt-f 'y'
     bind -M insert alt-g 'lg'
     bind alt-g 'lg'
+    bind -e alt-e
+    bind -e -M insert alt-e
+    bind -M insert alt-e '$EDITOR'
+    bind alt-e '$EDITOR'
 
     # Make fish visual mode copy to clipboard instead of primary
     bind -M visual y 'fish_clipboard_copy; commandline -f end-selection'
