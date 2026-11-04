@@ -11,10 +11,8 @@ return {
             date_format = '%Y-%m-%d %H:%M:%S',
             directories = {
                 '~/.config',
-                '~/Documents/notes',
-                '~/dev/repos/harpoon-core.nvim',
-                '~/dev/repos/dashboard.nvim',
-                '~/dev/repos/advent-of-code',
+                '~/notes',
+                '~/Kelp-Learning',
             },
         })
     end,
