@@ -26,3 +26,12 @@ local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
 vim.keymap.set('n', '<leader>fw', builtin.live_grep, { desc = 'Telescope live grep' })
 vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
+
+-- Gitsigns
+
+vim.keymap.set('n', '<leader>gp', '<cmd>Gitsigns preview_hunk<cr>', { desc = 'Gitsigns preview hunk' })
+vim.keymap.set('n', '<leader>gr', '<cmd>Gitsigns reset_hunk<cr>', { desc = 'Gitsigns reset hunk' })
+vim.keymap.set('n', '<leader>gj', '<cmd>Gitsigns next_hunk<cr>', { desc = 'Gitsigns next hunk' })
+vim.keymap.set('n', '<leader>gk', '<cmd>Gitsigns prev_hunk<cr>', { desc = 'Gitsigns prev hunk' })
+vim.keymap.set('n', '<leader>gb', '<cmd>Gitsigns toggle_current_line_blame<cr>', { desc = 'Gitsigns toggle current line blame' })
+vim.keymap.set('n', '<leader>gs', '<cmd>Gitsigns stage_hunk<cr>', { desc = 'Gitsigns stage hunk' })
