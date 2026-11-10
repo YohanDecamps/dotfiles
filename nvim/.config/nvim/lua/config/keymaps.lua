@@ -20,6 +20,10 @@ vim.keymap.set("n", "<leader>sh", "<cmd>split<cr>", {
   desc = "Create horizontal split",
 })
 
+-- Undotree
+
+vim.keymap.set('n', '<leader>ut', vim.cmd.UndotreeToggle)
+
 -- Telescope
 
 local builtin = require('telescope.builtin')
