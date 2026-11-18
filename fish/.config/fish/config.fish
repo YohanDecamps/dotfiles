@@ -25,6 +25,10 @@ if status is-interactive
     set -x __GLX_VENDOR_LIBRARY_NAME nvidia
     set -x MANPAGER "nvim +Man!"
 
+    # Sway
+
+    set -x SWAY_UNSUPPORTED_GPU true
+
     # Add rust binaries to PATH
     set -x PATH $HOME/.cargo/bin $PATH
 
