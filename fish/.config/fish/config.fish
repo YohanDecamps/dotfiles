@@ -11,9 +11,9 @@ if status is-interactive
         uwsm start hyprland.desktop
     end
 
-    set --global hydro_color_pwd yellow
+    set --global hydro_color_pwd green
 
-    set --global hydro_color_prompt yellow
+    set --global hydro_color_prompt green
     set --global hydro_color_duration green
     set --global hydro_symbol_git_dirty " ✗"
     
