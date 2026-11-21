@@ -1,0 +1,183 @@
+/**
+ * Rofi theme - Y3K palette, menu.png as background (drawn by
+ * mask-overlay.py under this transparent window; see window {})
+ * (palette matches ~/.config/ghostty/themes/Y3K and waybar)
+ */
+
+* {
+    bg: #222222;
+    fg: #fff4e6;
+    green: #8bb400;
+    yellow: #ffc815;
+    red: #ff2e2e;
+    blue: #0029bd;
+    magenta: #ff35a4;
+    cyan: #00d4ff;
+    selection: #504945;
+
+    background-color: transparent;
+    text-color: @fg;
+    font: "JetbrainsMono Nerd Font 12";
+
+    normal-background: transparent;
+    normal-foreground: @fg;
+    alternate-normal-background: transparent;
+    alternate-normal-foreground: @fg;
+    selected-normal-background: @bg;
+    selected-normal-foreground: @green;
+    active-background: @yellow;
+    active-foreground: @bg;
+    alternate-active-background: @yellow;
+    alternate-active-foreground: @bg;
+    selected-active-background: @bg;
+    selected-active-foreground: @green;
+    urgent-background: @red;
+    urgent-foreground: @bg;
+    alternate-urgent-background: @red;
+    alternate-urgent-foreground: @bg;
+    selected-urgent-background: @red;
+    selected-urgent-foreground: @bg;
+}
+
+window {
+    border: 0;
+    font: "JetbrainsMono Nerd Font 12";
+    /* Keep centred explicitly: mask-overlay.py centres its mask on
+       the same assumption, so the two windows coincide on screen. */
+    location: center;
+    anchor: center;
+    x-offset: 0;
+    y-offset: 0;
+    /* 783x1200 matches menu.png aspect (599x917 = 0.653). This width
+       is the scale reference for both images: mask-overlay.py
+       scales menu.png and mask.png by 783/599 (menu.png's natural
+       width), NOT mask.png to a width of 783, so they share a scale.
+       No background-image here on purpose: Rofi loads theme images
+       asynchronously, so the background would pop in after the
+       window appears. menu.png is instead drawn synchronously by
+       mask-overlay.py as a window under this (transparent) one. */
+    width: 650px;
+    height: 1200px;
+    padding: 180px 130px 400px 130px;
+    background-color: transparent;
+    transparency: "real";
+}
+
+mainbox {
+    border: 0;
+    spacing: 12px;
+    padding: 12px;
+    background-color: transparent;
+    children: [mode-bar, search-bar, listview];
+}
+
+search-bar {
+    expand: false;
+    orientation: horizontal;
+    children: [search-left, inputbar, search-right];
+}
+
+search-left, search-right {
+    expand: true;
+}
+
+inputbar {
+    expand: false;
+    width: 340px;
+    border: 0;
+    spacing: 8px;
+    padding: 8px;
+    background-color: transparent;
+    children: [entry, case-indicator];
+}
+
+mode-bar {
+    expand: false;
+    orientation: horizontal;
+    children: [dummy-left, prompt, dummy-right];
+}
+
+dummy-left, dummy-right {
+    expand: true;
+}
+
+prompt {
+    expand: false;
+    font: "Golden Girdle 28";
+    text-color: @green;
+    horizontal-align: 0.5;
+    vertical-align: 0.5;
+}
+
+entry {
+    text-color: @fg;
+    placeholder-color: #7c6f64;
+    placeholder: "type to search...";
+}
+
+case-indicator {
+    text-color: @cyan;
+}
+
+listview {
+    border: 0;
+    padding: 8px;
+    background-color: transparent;
+    columns: 1;
+    lines: 8;
+    spacing: 2px;
+    scrollbar: false;
+}
+
+
+element {
+    padding: 4px 8px;
+    spacing: 8px;
+    background-color: transparent;
+    text-color: @fg;
+    children: [element-icon, element-text];
+}
+
+/* Children do not inherit the parent element's colours on their own:
+   without `inherit` here the text stays @fg even when selected.
+   (Note: `element selected element-text` does not target the text
+   either -- rofi parses it as a state selector on `element` itself.) */
+element-text, element-icon {
+    background-color: transparent;
+    text-color: inherit;
+}
+
+element-icon {
+    size: 20px;
+}
+
+element selected {
+    background-color: @bg;
+    text-color: @green;
+}
+
+element selected.normal {
+    background-color: @bg;
+    text-color: @green;
+}
+
+element alternate {
+    background-color: transparent;
+}
+
+element urgent {
+    background-color: @red;
+    text-color: @bg;
+}
+
+element active {
+    background-color: @yellow;
+    text-color: @bg;
+}
+
+message {
+    border: 0;
+    padding: 8px;
+    background-color: transparent;
+    text-color: @fg;
+}
