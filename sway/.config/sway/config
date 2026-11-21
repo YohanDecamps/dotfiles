@@ -17,12 +17,12 @@ set $right l
 set $term ghostty
 set $browser zen-browser
 # Your preferred application launcher
-set $menu rofi -show drun -terminal ghostty -kb-cancel Escape
+set $menu /home/gaia/.config/rofi/rofi-with-mask -show drun -terminal ghostty -kb-cancel Escape
 
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg ~/.config/sway/wallpapers/yellow_kyoto.jpg fill
+output * bg ~/.config/sway/wallpapers/wp14988743-4k-y2k-wallpapers.jpg fill
 
 # Monitors (mirrors ~/.config/hypr/monitors.lua, using sway's connector names)
 output DP-1 mode 2560x1440@143.856Hz position 0 0 scale 1
@@ -75,7 +75,7 @@ default_floating_border pixel 2
 
 gaps inner 20
 
-set $base00 #ea8c19ee
+set $base00 #8BB400
 
 client.focused $base00 $base00 $base00 $base00 $base00
 
@@ -236,6 +236,9 @@ bindsym $mod+r mode "resize"
 
     # Special key to take a screenshot with grim
     bindsym Print exec grim
+
+    # Area-selection screenshot (drag to select; saves + copies to clipboard)
+    bindsym $mod+Shift+p exec ~/.config/sway/screenshot-area.sh
 
 #
 # Status Bar:
