@@ -14,10 +14,10 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term ghostty
+set $term ratty
 set $browser zen-browser
 # Your preferred application launcher
-set $menu /home/gaia/.config/rofi/rofi-with-mask -show drun -terminal ghostty -kb-cancel Escape
+set $menu /home/gaia/.config/rofi/rofi-with-mask -show drun -terminal $term -kb-cancel Escape
 
 ### Output configuration
 #
