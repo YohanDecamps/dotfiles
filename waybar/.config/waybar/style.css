@@ -54,7 +54,7 @@ window#waybar {
   padding: 6px 9px;
   min-height: 32px;
   min-width: 18px;
-  background-image: url("/home/gaia/.config/waybar/waybar-icon.png");
+  background-image: url("/home/erebus/.config/waybar/waybar-icon.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: contain;

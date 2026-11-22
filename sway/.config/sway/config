@@ -17,7 +17,7 @@ set $right l
 set $term ratty
 set $browser zen-browser
 # Your preferred application launcher
-set $menu /home/gaia/.config/rofi/rofi-with-mask -show drun -terminal $term -kb-cancel Escape
+set $menu ~/.config/rofi/rofi-with-mask -show drun -terminal $term -kb-cancel Escape
 
 ### Output configuration
 #

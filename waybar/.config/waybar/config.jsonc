@@ -1,7 +1,7 @@
 {
   "layer": "top",
   "position": "left",
-  "output": "DP-1",
+  "output": ["DP-1", "HDMI-A-1", "eDP-1"],
   "exclusive": true,
   "passthrough": false,
   "width": 36,
@@ -30,7 +30,7 @@
   "custom/icon": {
     "format": " ",
     "tooltip-format": "Rofi App Launcher",
-    "on-click": "/home/gaia/.config/rofi/rofi-with-mask -show drun -terminal ghostty -kb-cancel Escape"
+    "on-click": "/home/erebus/.config/rofi/rofi-with-mask -show drun -terminal ratty -kb-cancel Escape"
   },
 
   "memory": {

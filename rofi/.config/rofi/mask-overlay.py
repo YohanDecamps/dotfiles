@@ -32,6 +32,7 @@ Both alpha bounding boxes are 483x778 px but at different canvas
 offsets (menu 58,74; mask 44,70), so the mask canvas is shifted
 (+14,+4) natural px to align the silhouettes edge-to-edge.
 """
+import os
 import subprocess
 import sys
 
@@ -40,7 +41,7 @@ gi.require_version('Gtk', '3.0')
 gi.require_version('GtkLayerShell', '0.1')
 from gi.repository import Gtk, Gdk, GdkPixbuf, GtkLayerShell, GLib
 
-ROFI_DIR = "/home/gaia/.config/rofi"
+ROFI_DIR = os.path.dirname(os.path.abspath(__file__))
 MASK = f"{ROFI_DIR}/mask.png"
 MENU = f"{ROFI_DIR}/menu.png"
 # Must match `window { width/height }` in config.rasi (centred there,
