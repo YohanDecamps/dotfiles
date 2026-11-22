@@ -1,0 +1,53 @@
+[cursor.model]
+path = "cursor.glb"
+scale_factor = 1.0
+brightness = 0.8
+x_offset = 0.5
+plane_offset = 18.0
+visible = true
+
+[cursor.animation]
+spin_speed = 1.4
+bob_speed = 2.2
+bob_amplitude = 0.08
+
+# Lets shell configs detect Ratty (e.g. for the fastfetch 3D logo)
+[env]
+TERM_PROGRAM = "ratty"
+
+# Ratty supports a single font family with no fallback list, so this
+# must be a Nerd Font (Adwaita Mono / plain JetBrains Mono have no PUA
+# icons). "Mono" variant = icons are single-cell wide, for terminals;
+# the non-Mono "JetBrainsMono Nerd Font" uses double-width icons.
+[font]
+family = "JetBrainsMono Nerd Font Mono"
+style = "Regular"
+size = 12
+
+# Y3K theme, copied from ~/.config/ghostty/themes/Y3K
+# Ratty has no selection / cursor-text options, so Ghostty's
+# selection-background (504945) and cursor-text (282828) are omitted.
+[theme]
+foreground = "#fff4e6"
+background = "#282828"
+cursor = "#fff4e6"
+
+[theme.normal]
+black = "#282828"
+red = "#ff2e2e"
+green = "#8bb400"
+yellow = "#ffc815"
+blue = "#0029bd"
+magenta = "#ff35a4"
+cyan = "#00d4ff"
+white = "#fff4e6"
+
+[theme.bright]
+black = "#7c6f64"
+red = "#ff2e2e"
+green = "#8bb400"
+yellow = "#ffc815"
+blue = "#0029bd"
+magenta = "#ff35a4"
+cyan = "#00d4ff"
+white = "#fffbf6"
