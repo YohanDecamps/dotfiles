@@ -8,6 +8,9 @@ return {
     config = function()
         require('dashboard').setup({
             header = require('ascii').art.text.neovim.elite,
+            highlight_groups = {
+                header = 'DashboardHeader',
+            },
             date_format = '%Y-%m-%d %H:%M:%S',
             directories = {
                 '~/.config',

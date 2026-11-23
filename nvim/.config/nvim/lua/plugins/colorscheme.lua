@@ -1,12 +1,7 @@
 return {
-  {
-    "ellisonleao/gruvbox.nvim",
+    "rktjmp/lush.nvim",
     lazy = false,
-    priority = 1000,
-    opts = {},
-    config = function(_, opts)
-      require("gruvbox").setup(opts)
-      vim.cmd.colorscheme("gruvbox")
+    config = function()
+      vim.cmd.colorscheme("y3k")
     end,
-  }
 }
