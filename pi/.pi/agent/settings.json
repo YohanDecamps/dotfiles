@@ -1,0 +1,43 @@
+{
+  "$schema": "https://pi.dev/schemas/settings.schema.json",
+  "enableInstallTelemetry": false,
+  "enableAnalytics": false,
+  "markdown": {
+    "codeBlockIndent": ""
+  },
+  "terminal": {
+    "showTerminalProgress": true
+  },
+  "outputPad": 0,
+  "showCacheMissNotices": true,
+  "steeringMode": "all",
+  "defaultProvider": "openrouter",
+  "defaultModel": "meta/muse-ember",
+  "defaultThinkingLevel": "medium",
+  "compaction": {
+    "enabled": false
+  },
+  "observational-memory": {
+    "compactAfterTokens": 100000,
+    "compactAfterTokensMode": "calibrated",
+    "model": {
+      "id": "tencent/hy4-flash",
+      "thinking": "off"
+    }
+  },
+  "defaultProjectTrust": "always",
+  "packages": [
+    "npm:pi-web-access",
+    "npm:pi-observational-memory"
+  ],
+  "extensions": [
+    "-builtin:codemode",
+    "-builtin:tool-search",
+    "-builtin:llama.cpp",
+    "-builtin:mcp"
+  ],
+  "lastChangelogVersion": "1.6.0",
+  "extensionChangelogVersions": {
+    "{\"source\":\"npm:pi-web-access\",\"scope\":\"user\"}": "0.48.0"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "tinyfishApiKey": "",
+  "exaApiKey": "",
+  "workflow": "none",
+  "searchRouting": {
+    "providers": [
+      "tinyfish",
+      "exa"
+    ],
+    "fallbackOn": [
+      "transient",
+      "quota",
+      "network",
+      "invalid-response"
+    ]
+  },
+  "fetchRouting": {
+    "providers": [
+      "tinyfish",
+      "exa"
+    ],
+    "allowRemoteHostedProviders": true,
+    "fallbackOn": [
+      "transient",
+      "quota",
+      "network",
+      "invalid-response"
+    ]
+  }
+}

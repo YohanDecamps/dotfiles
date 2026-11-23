@@ -1,0 +1,19 @@
+{
+  "$schema": "https://pi.dev/schemas/models.schema.json",
+  "providers": {
+    "openrouter": {
+      "apiKey": "",
+      "modelOverrides": {
+        "meta/muse-ember": {
+          "compat": {
+            "openRouterRouting": {
+              "only": [
+                "google-vertex/global"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}
