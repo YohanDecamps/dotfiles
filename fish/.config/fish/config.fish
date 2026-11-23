@@ -3,6 +3,7 @@ set -x EDITOR nvim
 alias vi="nvim"
 alias vim="nvim"
 
+status is-interactive; and not set -q TMUX; and exec tmux
 if status is-interactive
     fastfetch
     fish_vi_key_bindings
@@ -53,6 +54,7 @@ if status is-interactive
     end
      
     loadenv ~/.config/fish/.env
+
 
     # Spleeter
     function spleeter
