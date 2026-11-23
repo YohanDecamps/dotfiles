@@ -107,12 +107,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', 'gl', vim.diagnostic.open_float, opts)
     vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
     vim.keymap.set('n', '<leader>lf', function()
-      vim.lsp.buf.format({
-        bufnr = bufnr,
-        filter = function(client)
-          return client.name == 'biome'
-        end,
-      })
+    vim.lsp.buf.format({ bufnr = bufnr })
     end, opts)
     vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, opts)
   end,
