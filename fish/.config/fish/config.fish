@@ -99,4 +99,6 @@ if status is-interactive
         end
         rm -f -- "$tmp"
     end   # Commands to run in interactive sessions can go here
+
+    zoxide init fish | source
 end
