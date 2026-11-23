@@ -1,38 +1,63 @@
+@define-color bg #282828;
+@define-color fg #fff4e6;
+@define-color cursor #fff4e6;
+@define-color selection #504945;
+
+@define-color black #282828;
+@define-color red #ff2e2e;
+@define-color green #94e027;
+@define-color yellow #ffc815;
+@define-color blue #0029bd;
+@define-color magenta #ff35a4;
+@define-color cyan #00d4ff;
+@define-color white #fff4e6;
+
+@define-color bright_black #7c6f64;
+@define-color bright_red #ff2e2e;
+@define-color bright_green #94e027;
+@define-color bright_yellow #ffc815;
+@define-color bright_blue #0029bd;
+@define-color bright_magenta #ff35a4;
+@define-color bright_cyan #00d4ff;
+@define-color bright_white #fffbf6;
+
 /* ───────── Global ───────── */
 * {
   border: none;
   font-family: "JetbrainsMono Nerd Font";
   font-size: 12px;
-  color: #282828;
+  color: @fg;
 }
 
 window#waybar {
-  background: transparent;
+  background: @bg;
   margin: 6px 0;
 }
 
 /* ───────── TOP section (stacked as one block) ───────── */
 
-#custom-artixicon,
+#custom-icon,
 #clock {
-  background: #7CA69A;
 }
 
 #clock {
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  font-family: "Golden Girdle";
+  color: @green;
+  font-size: 10px;
   padding: 10px 0;
   padding-bottom: 12px;
 }
 
 /* Rounded only at section edges */
-#custom-artixicon {
-  font-size: 24px;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  background: #282828;
-  padding: 0px 0px;
-  color: #8AB09F;
+#custom-icon {
+  margin-top: 4px;
+  padding: 6px 9px;
+  min-height: 32px;
+  min-width: 18px;
+  background-image: url("/home/erebus/.config/waybar/waybar-icon.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
 }
 
 #memory,
@@ -44,45 +69,35 @@ window#waybar {
 
 #memory {
   margin-top: 12px;
-  background: #A4AD60;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
 }
 
 #cpu {
-  background: #CE9E53;
 }
 
 #temperature {
-  background: #E0695D;
 }
 
 #disk {
-  background: #D7909D;
   padding-top: 15px;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
 }
 
 /* ───────── MIDDLE section ───────── */
 
 #taskbar {
   background: transparent;
-  border-radius: 10px;
 }
 
 #taskbar button {
-  border-radius: 10px;
   padding: 6px 6px;
   transition: background 0.3s ease;
 }
 
 #taskbar button.active {
-  background: rgba(28, 28, 28, 0.5);
+  background: rgba(40, 40, 40, 0.5);
 }
 
 #taskbar button:hover {
-  background: rgba(28, 28, 28, 0.5);
+  background: rgba(40, 40, 40, 0.5);
 }
 
 /* ───────── BOTTOM section (stacked) ───────── */
@@ -90,21 +105,16 @@ window#waybar {
 #pulseaudio,
 #battery,
 #language {
-  background: #95BA88;
   padding: 10px 0;
 }
 
 #battery {
   margin-top: 12px;
   padding-top: 18px;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
 }
 
 #pulseaudio {
 }
 
 #language {
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
 }

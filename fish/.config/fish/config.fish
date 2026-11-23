@@ -11,9 +11,9 @@ if status is-interactive
         uwsm start hyprland.desktop
     end
 
-    set --global hydro_color_pwd yellow
+    set --global hydro_color_pwd green
 
-    set --global hydro_color_prompt yellow
+    set --global hydro_color_prompt green
     set --global hydro_color_duration green
     set --global hydro_symbol_git_dirty " ✗"
     
@@ -24,6 +24,10 @@ if status is-interactive
     set -x __NV_PRIME_RENDER_OFFLOAD 1
     set -x __GLX_VENDOR_LIBRARY_NAME nvidia
     set -x MANPAGER "nvim +Man!"
+
+    # Sway
+
+    set -x SWAY_UNSUPPORTED_GPU true
 
     # Add rust binaries to PATH
     set -x PATH $HOME/.cargo/bin $PATH

@@ -4,7 +4,7 @@
   "logo": {
     "source": "~/.config/fastfetch/tux.txt",
     "color": {
-      "1": "yellow"
+      "1": "green"
     }
     },
     "display": {

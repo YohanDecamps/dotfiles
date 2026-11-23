@@ -1,0 +1,5 @@
+#!/bin/sh
+# Rofi with mask.png on top of it. Synchronous, no daemon/preload:
+# mask-overlay.py loads menu.png + mask.png first, then launches
+# Rofi and shows the mask over it until Rofi exits.
+exec python3 "$(dirname "$0")/mask-overlay.py" "$@"
