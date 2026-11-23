@@ -1,0 +1,10 @@
+bin
+npm
+sessions
+.gitignore
+auth.json
+models-store.json
+cache
+pi-web-access
+web-search-cache
+
