@@ -14,7 +14,7 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term ratty
+set $term foot
 set $browser zen-browser
 # Your preferred application launcher
 set $menu ~/.config/rofi/rofi-with-mask -show drun -terminal $term -kb-cancel Escape
@@ -249,6 +249,7 @@ bindsym $mod+r mode "resize"
 exec waybar
 # Dwindle-style automatic split orientation (emulates Hyprland's default layout).
 exec autotiling
+exec caps2esc
 
 seat seat0 xcursor_theme Bibata-Modern-Ice 24
 

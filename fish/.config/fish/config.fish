@@ -9,7 +9,7 @@ if status is-interactive
     fish_vi_key_bindings
 
     if test -z "$WAYLAND_DISPLAY"
-        uwsm start hyprland.desktop
+        uwsm start sway.desktop
     end
 
     set --global hydro_color_pwd green
