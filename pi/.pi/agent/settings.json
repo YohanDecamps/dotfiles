@@ -28,7 +28,8 @@
   "defaultProjectTrust": "always",
   "packages": [
     "npm:pi-web-access",
-    "npm:pi-observational-memory"
+    "npm:pi-observational-memory",
+    "npm:pi-vim"
   ],
   "extensions": [
     "-builtin:codemode",
