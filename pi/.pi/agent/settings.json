@@ -11,8 +11,8 @@
   "outputPad": 0,
   "showCacheMissNotices": true,
   "steeringMode": "all",
-  "defaultProvider": "openrouter",
-  "defaultModel": "meta/muse-ember",
+  "defaultProvider": "ollama",
+  "defaultModel": "qwen3.5:9b",
   "defaultThinkingLevel": "medium",
   "compaction": {
     "enabled": false
@@ -29,7 +29,8 @@
   "packages": [
     "npm:pi-web-access",
     "npm:pi-observational-memory",
-    "npm:pi-vim"
+    "npm:pi-vim",
+    "npm:pi-sandbox"
   ],
   "extensions": [
     "-builtin:codemode",

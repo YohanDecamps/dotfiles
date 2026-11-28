@@ -1,0 +1,23 @@
+{
+  "enabled": true,
+  "enableAccessRequestTool": false,
+  "sandboxUserShell": false,
+  "permissionPromptTimeoutSeconds": 600,
+  "allowBrowserProcess": true,
+  "network": {
+    "allowLocalBinding": true,
+    "allowAllUnixSockets": true,
+    "allowUnauthenticatedSocksProxy": true,
+    "disabled": false,
+    "allowSSHAgentSocket": true,
+    "allowedDomains": ["github.com", "*.github.com"],
+    "deniedDomains": []
+  },
+  "filesystem": {
+    "denyRead": [],
+    "allowRead": ["*"],
+
+    "allowWrite": [],
+    "denyWrite": ["*"]
+  }
+}
